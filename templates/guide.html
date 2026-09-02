@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption & Decryption Guide</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='images/style.css') }}">
+    <script src="{{ url_for('static', filename='images/vault.js') }}" defer></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">E&D</div>
+        <a href="/">Home</a>
+        <a href="/guide">Encryption & Decryption Guide</a>
+        <a href="/comparison">Compare Algorithms</a>
+        <a href="/info">About</a>
+        <a href="/questions">Q&A</a>
+        <a href="/settings">Settings</a>
+    </nav>
+
+    <main class="page">
+        <h1>Encryption and Decryption</h1>
+        <p class="subtitle">How File Encryption & Decryption Tool protects your files.</p>
+
+        <section class="explanation-grid">
+            <div class="explanation encrypt-box">
+                <div class="large-icon">🔒</div>
+                <h2>What is Encryption?</h2>
+                <p>
+                    Encryption converts readable information into an unreadable
+                    format. A secret key is required to read the protected data.
+                </p>
+                <div class="flow">Original File → Secret Key → Encrypted File</div>
+            </div>
+
+            <div class="explanation decrypt-box">
+                <div class="large-icon">🔓</div>
+                <h2>What is Decryption?</h2>
+                <p>
+                    Decryption uses the correct secret key to convert encrypted
+                    data back into the original readable file.
+                </p>
+                <div class="flow">Encrypted File + Key → Original File</div>
+            </div>
+        </section>
+
+        <section class="warning">
+            <h2>Keep Your Key Safe</h2>
+            <p>
+                Never share your key file with unauthorized people. The encrypted
+                file and its matching key must be kept securely.
+            </p>
+        </section>
+    </main>
+</body>
+</html>

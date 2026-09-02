@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <h2>Decrypt File</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <label>Encrypted .qsv file</label>
+        <input type="file" name="encrypted_file" required data-file-input>
+        <div class="file-information" data-file-information>Select an encrypted file to see its details.</div>
+
+        <label for="decrypt-password">Password</label>
+        <div class="password-field">
+            <input id="decrypt-password" type="password" name="password" required
+                   autocomplete="current-password">
+            <button type="button" class="password-toggle" data-password-toggle
+                    aria-label="Show password" aria-pressed="false">Show</button>
+        </div>
+
+        <button type="submit">Decrypt File</button>
+    </form>
+</div>
+{% endblock %}

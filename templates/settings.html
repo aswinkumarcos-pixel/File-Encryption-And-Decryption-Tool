@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Settings | File Encryption & Decryption Tool{% endblock %}
+{% block content %}
+<main class="page settings-page">
+    <span class="badge">APP PREFERENCES</span>
+    <h1>Settings</h1>
+    <p class="subtitle">Control how the vault looks and how upload forms behave on this device.</p>
+
+    <section class="settings-list">
+        <div class="setting-row">
+            <div>
+                <h2>Appearance</h2>
+                <p>Choose the color theme used throughout the vault.</p>
+            </div>
+            <label class="setting-control" for="theme-preference">
+                <span class="visually-hidden">Theme</span>
+                <select id="theme-preference" data-theme-preference>
+                    <option value="dark">Dark mode</option>
+                    <option value="light">Light mode</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="setting-row">
+            <div>
+                <h2>File size limit</h2>
+                <p>Files larger than this preference are blocked before upload. The server safety ceiling is 50 MB.</p>
+            </div>
+            <label class="setting-control" for="file-size-preference">
+                <span class="visually-hidden">Maximum file size</span>
+                <select id="file-size-preference" data-file-size-preference>
+                    <option value="5">5 MB</option>
+                    <option value="10">10 MB</option>
+                    <option value="25">25 MB</option>
+                    <option value="50">50 MB</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="setting-row">
+            <div>
+                <h2>Motion</h2>
+                <p>Reduce visual movement when navigating or interacting with the vault.</p>
+            </div>
+            <label class="switch" for="motion-preference">
+                <span class="visually-hidden">Reduce motion</span>
+                <input id="motion-preference" type="checkbox" data-motion-preference>
+                <span class="switch-slider"></span>
+            </label>
+        </div>
+    </section>
+
+    <div class="settings-actions">
+        <button type="button" class="secondary" data-reset-settings>Reset preferences</button>
+        <span class="settings-status" data-settings-status role="status"></span>
+    </div>
+</main>
+{% endblock %}

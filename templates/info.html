@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}About | Quantum-Safe File Vault{% endblock %}
+{% block content %}
+<main class="page info-page">
+    <span class="badge">ABOUT THE PROJECT</span>
+    <h1>Security You Can Inspect</h1>
+    <p class="subtitle">Quantum-Safe File Vault is a small, transparent demonstration of secure file handling and post-quantum migration thinking.</p>
+
+    <section class="info-sections">
+        <article class="info-section">
+            <h2>What this vault does</h2>
+            <p>Files are encrypted locally with AES-256-GCM. The encrypted file and its separate key file can then be downloaded and stored independently.</p>
+        </article>
+        <article class="info-section">
+            <h2>Why quantum-safe matters</h2>
+            <p>Large quantum computers could weaken some public-key systems. ML-KEM is a standardized post-quantum key-establishment algorithm intended to help protect future exchanges.</p>
+        </article>
+        <article class="info-section">
+            <h2>What this demo does not claim</h2>
+            <p>The selectable mode labels are educational. The current implementation uses AES-256-GCM; ML-KEM and hybrid key exchange are documented comparison paths, not yet wired into encryption.</p>
+        </article>
+    </section>
+
+    <section class="info-panel">
+        <h2>Project principles</h2>
+        <div class="principles">
+            <div><strong>Confidentiality</strong><span>Readable files become protected ciphertext.</span></div>
+            <div><strong>Integrity</strong><span>AES-GCM detects altered encrypted data.</span></div>
+            <div><strong>Clarity</strong><span>The key boundary and algorithm status stay visible.</span></div>
+        </div>
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Quantum-Safe File Vault{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='images/style.css') }}">
+    <script src="{{ url_for('static', filename='images/vault.js') }}" defer></script>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">E&D</div>
+            <a href="/">Home</a>
+            <a href="/guide">Encryption &amp; Decryption Guide</a>
+            <a href="/comparison">Compare Algorithms</a>
+            <a href="/info">About</a>
+            <a href="/questions">Q&amp;A</a>
+            <a href="/settings">Settings</a>
+        </nav>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="message">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

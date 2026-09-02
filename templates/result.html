@@ -1,0 +1,40 @@
+Flask
+cryptography
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='images/style.css') }}">
+    <script src="{{ url_for('static', filename='images/vault.js') }}" defer></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">QSV</div>
+        <a href="/">Home</a>
+        <a href="/guide">Encryption &amp; Decryption Guide</a>
+        <a href="/comparison">Compare Algorithms</a>
+        <a href="/info">About</a>
+        <a href="/questions">Q&A</a>
+        <a href="/settings">Settings</a>
+    </nav>
+
+    <main class="result-page">
+        <div class="success-icon">✓</div>
+        <h1>{{ title }}</h1>
+        <p>{{ message }}</p>
+
+        <a href="{{ download_url }}" class="button">⬇ {{ download_text }}</a>
+
+        {% if second_url %}
+            <a href="{{ second_url }}" class="button secondary">
+                ⬇ {{ second_text }}
+            </a>
+        {% endif %}
+
+        <br>
+        <a href="/" class="back-link">Return to Home</a>
+    </main>
+</body>
+</html>

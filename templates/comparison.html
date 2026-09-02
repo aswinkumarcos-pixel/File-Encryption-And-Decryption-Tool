@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}Algorithm Comparison | Quantum-Safe File Vault{% endblock %}
+{% block content %}
+<main class="page comparison-page">
+    <h1>Choose the Right Protection</h1>
+    <p class="subtitle">A practical view of the algorithms behind today’s vaults and tomorrow’s upgrades.</p>
+
+    <section class="comparison-table-wrap">
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Approach</th>
+                    <th>Protects file data</th>
+                    <th>Quantum resistant</th>
+                    <th>Best fit</th>
+                    <th>Status here</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="current-row">
+                    <th>AES-256-GCM</th>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td>Fast everyday file encryption</td>
+                    <td><span class="status current">Active</span></td>
+                </tr>
+                <tr>
+                    <th>ML-KEM (Kyber)</th>
+                    <td>Keys only</td>
+                    <td>Yes</td>
+                    <td>Post-quantum key establishment</td>
+                    <td><span class="status planned">Concept</span></td>
+                </tr>
+                <tr>
+                    <th>Hybrid AES + ML-KEM</th>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Migration with layered protection</td>
+                    <td><span class="status planned">Next step</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="comparison-grid">
+        <article class="comparison-card active-card">
+            <span class="badge">CURRENT IMPLEMENTATION</span>
+            <h2>AES-256-GCM</h2>
+            <p>The vault encrypts file contents with authenticated AES-GCM and a fresh random nonce for every file.</p>
+            <ul>
+                <li>Strong confidentiality and tamper detection</li>
+                <li>Efficient for files of any normal size</li>
+                <li>Implemented by this demo</li>
+            </ul>
+        </article>
+        <article class="comparison-card">
+            <span class="badge">POST-QUANTUM KEY LAYER</span>
+            <h2>ML-KEM (Kyber)</h2>
+            <p>ML-KEM is designed to establish shared secrets against attackers equipped with future quantum computers.</p>
+            <ul>
+                <li>Used for key establishment, not bulk file data</li>
+                <li>More key material and computation than AES alone</li>
+                <li>Ready to pair with symmetric encryption</li>
+            </ul>
+        </article>
+    </section>
+
+    <div class="callout"><strong>Recommended direction:</strong> keep AES-256-GCM for file data and add ML-KEM around key exchange when deploying a production post-quantum design.</div>
+</main>
+{% endblock %}

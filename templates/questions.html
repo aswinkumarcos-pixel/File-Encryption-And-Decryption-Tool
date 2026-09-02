@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions and Answers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='images/style.css') }}">
+    <script src="{{ url_for('static', filename='images/vault.js') }}" defer></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">E&D</div>
+        <a href="/">Home</a>
+        <a href="/guide">Encryption &amp; Decryption Guide</a>
+        <a href="/comparison">Compare Algorithms</a>
+        <a href="/info">About</a>
+        <a href="/questions">Q&A</a>
+        <a href="/settings">Settings</a>
+    </nav>
+
+    <main class="page">
+        <h1>Questions and Answers</h1>
+        <p class="subtitle">Learn more about secure file protection.</p>
+
+        <div class="faq">
+            <details>
+                <summary>What is the purpose of this project?</summary>
+                <p>
+                    It protects files by converting them into encrypted data and
+                    restoring them only with the correct key.
+                </p>
+            </details>
+
+            <details>
+                <summary>What happens during encryption?</summary>
+                <p>
+                    The selected file is converted into protected encrypted data.
+                    The application also creates a separate key file.
+                </p>
+            </details>
+
+            <details>
+                <summary>What happens during decryption?</summary>
+                <p>
+                    The encrypted file and matching key are processed to restore
+                    the original file.
+                </p>
+            </details>
+
+            <details>
+                <summary>Why is the key file important?</summary>
+                <p>
+                    Without the correct key, the encrypted file cannot be
+                    successfully restored.
+                </p>
+            </details>
+
+            <details>
+                <summary>What is hybrid encryption?</summary>
+                <p>
+                    Hybrid encryption combines conventional file encryption with
+                    post-quantum key protection.
+                </p>
+            </details>
+        </div>
+
+        <a href="/" class="button">Return to Vault</a>
+    </main>
+</body>
+</html>

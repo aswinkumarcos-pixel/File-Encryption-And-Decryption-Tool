@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <h2>Select Encryption Mode</h2>
+    <p>File: <strong>{{ session.get("selected_file") }}</strong></p>
+    <p>Size: <strong>{{ session.get("file_size", 0) }} bytes</strong></p>
+
+    <form method="POST">
+        <label>Encryption mode</label>
+        <select name="mode">
+            <option value="AES-256">Classical AES-256</option>
+            <option value="Kyber ML-KEM">Post-Quantum Kyber ML-KEM (demo)</option>
+            <option value="Hybrid">Hybrid AES-256 + Kyber (demo)</option>
+        </select>
+        <button type="submit">Next: Encrypt</button>
+    </form>
+</div>
+{% endblock %}

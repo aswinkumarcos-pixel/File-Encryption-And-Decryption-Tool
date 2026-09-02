@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <h2>Select File</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <label>Choose a file to encrypt</label>
+        <input type="file" name="file" required>
+        <button type="submit">Next: Choose Mode</button>
+    </form>
+</div>
+{% endblock %}
